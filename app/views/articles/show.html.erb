@@ -1,0 +1,42 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to 'JVT', root_path, class: 'navbar-item' %>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'navbar-item' %>
+    <%= link_to 'Back', articles_path, class: 'navbar-item' %>
+  </div>
+</nav>
+
+<p id="notice"><%= notice %></p>
+
+<div class="column is-6 is-offset-one-quarter">
+  <p class="title has-text-centered">
+    <%= @article.title %>
+  </p>
+</div>
+
+<div class="column is-10 is-offset-1">
+  <strong>
+    <center><%= @article.uptext %></center>
+  </strong>
+</div>
+<br/>
+
+<p>
+  <center><%= image_tag @article.image.thumb.url, :style => 'align: center;' %></center>
+</p>
+<br/>
+
+<div class="column is-10 is-offset-1">
+  <p>
+    <center><%= @article.text %></center>
+  </p>
+</div>
+
+<div class="column is-6 is-offset-one-quarter">
+  <p>
+    <p class="title is-4">Note: <%= @article.note %> </p>
+    <progress class="progress is-danger" value="<%= @article.note %>" max="20"><%= @article.note %></progress>
+  </p>
+</div>
+
+<br/>
